@@ -13,7 +13,7 @@ class Things {
     }
 
     public String toString() {
-        return "{" + this.name + "}";
+        return "*" + this.name + "*";
     }
 
 }

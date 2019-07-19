@@ -1,9 +1,11 @@
 package main.java;
 
+import main.java.boxesthings.Boxes;
 import main.java.movies.Cinema;
 import main.java.teamusers.TeamUsers;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @SuppressWarnings("unused")
@@ -38,7 +40,10 @@ class Main {
         System.out.println();
 
         System.out.println("<== Task four. Fragile things protection in the box ==>");
+
+        List<Boxes> boxList = Arrays.asList(new Boxes(), new Boxes(), new Boxes(), new Boxes());
+        System.out.println("* List of protected fragile things: ");
+        Boxes.protectFragileItems(boxList);
+
     }
-
-
 }
