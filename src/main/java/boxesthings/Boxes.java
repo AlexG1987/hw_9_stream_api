@@ -9,14 +9,14 @@ import java.util.stream.Stream;
 
 public class Boxes {
 
-    private static List<Things> fragileThings = (Arrays.asList(
+    private static final List<Things> fragileThings = (Arrays.asList(
             new Things("Cup"),
             new Things("Mirror"),
             new Things("Bottle"),
             new Things("Plate")));
-    private List<Things> thingsList = new ArrayList<>();
+    private final List<Things> thingsList = new ArrayList<>();
 
-public Boxes() {
+    public Boxes() {
         Random random = new Random();
         List<Things> strongThings = (Arrays.asList(
                 new Things("Paper"),
@@ -39,9 +39,16 @@ public Boxes() {
         boxList.stream().flatMap(boxes -> boxes.thingsList.stream())
                 .filter(t -> (fragileThings.stream()
                         .map(Things::getName).collect(Collectors.toList()).contains(t.getName())))
-                        .map(Protector::new)
-                        .collect(Collectors.toList())
-                        .forEach(System.out::println);
+                .map(Protector::new)
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
+    }
+
+    public static void printProtectedFragileItems() {
+        System.out.println("<== Task four. Fragile things protection in the box ==>");
+        List<Boxes> boxList = Arrays.asList(new Boxes(), new Boxes(), new Boxes(), new Boxes());
+        System.out.println("* List of protected fragile things: ");
+        Boxes.protectFragileItems(boxList);
     }
 
     public String toString() {

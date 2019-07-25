@@ -21,19 +21,22 @@ public class Cinema {
             new Movies("Spider-Man: Far from Home", "adventure", 100),
             new Movies("Aladdin", "fantasy", 70));
 
-    public static Map<String, Double> printAveragePriceByGenre() {
-        return Stream.concat(cinema1.stream(), cinema2.stream())
+    public static void printAverageTicketPriceByGenre() {
+        System.out.println("* The average price for movies by genre is: ");
+        Map<String, Double> s = Stream.concat(cinema1.stream(), cinema2.stream())
                 .collect(Collectors.groupingBy(Movies::getGenre, Collectors.averagingInt(Movies::getPrice)));
+        System.out.println(s);
     }
 
-    public static void printMoviesByGenre(String genre) {
-        int count = (int) (cinema1.stream().
-                filter(Movies -> Movies.getGenre().equals(genre)).
-                count() +
-                cinema2.stream().
-                        filter(Movies -> Movies.getGenre().equals(genre)).
-                        count());
-        System.out.println("* Int the two Cinemas there are: " + count + " movies in genre " + "'" + genre + "'");
+    public static void printCountMoviesByGenre(String genre) {
+        System.out.println("<== Task three. Cinema movie list ==>");
+        int count = (int) (cinema1.stream()
+                .filter(Movies -> Movies.getGenre().equals(genre))
+                .count() +
+                cinema2.stream()
+                        .filter(Movies -> Movies.getGenre().equals(genre))
+                        .count());
+        System.out.println("* In the two Cinemas there are: " + count + " movies in genre " + "'" + genre + "'");
     }
 
 }
