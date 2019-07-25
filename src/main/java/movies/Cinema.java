@@ -8,13 +8,13 @@ import java.util.stream.Stream;
 
 public class Cinema {
 
-    private static List<Movies> cinema1 = Arrays.asList(
+    private static final List<Movies> cinema1 = Arrays.asList(
             new Movies("Captain Marvell", "fantastic", 80),
             new Movies("John Wick: Chapter 3 - Parabellum", "action", 90),
             new Movies("Green Book", "drama", 50),
             new Movies("Alita: Battle Angel", "fantastic", 60),
             new Movies("Avengers: Endgame", "fantastic", 120));
-    private static List<Movies> cinema2 = Arrays.asList(
+    private static final List<Movies> cinema2 = Arrays.asList(
             new Movies("Bohemian Rhapsody", "biography", 50),
             new Movies("Godzilla: King of the Monsters", "action", 70),
             new Movies("Dark Phoenix", "fantastic", 80),

@@ -16,7 +16,7 @@ public class Boxes {
             new Things("Plate")));
     private final List<Things> thingsList = new ArrayList<>();
 
-    public Boxes() {
+    private Boxes() {
         Random random = new Random();
         List<Things> strongThings = (Arrays.asList(
                 new Things("Paper"),
@@ -35,7 +35,7 @@ public class Boxes {
 
     }
 
-    public static void protectFragileItems(List<Boxes> boxList) {
+    private static void protectFragileItems(List<Boxes> boxList) {
         boxList.stream().flatMap(boxes -> boxes.thingsList.stream())
                 .filter(t -> (fragileThings.stream()
                         .map(Things::getName).collect(Collectors.toList()).contains(t.getName())))

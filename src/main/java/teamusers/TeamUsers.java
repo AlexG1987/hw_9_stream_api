@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class TeamUsers {
 
-    private static List<Users> loginUsersList = Arrays.asList(
+    private static final List<Users> loginUsersList = Arrays.asList(
             new Users("benedict@user.com", LocalDate.parse("2019-07-18"), "Scouts"),
             new Users("scott@user.com", LocalDate.parse("2019-07-04"), "Avengers"),
             new Users("john@user.com", LocalDate.parse("2019-07-08"), "Scouts"),

@@ -4,9 +4,9 @@ import java.time.LocalDate;
 
 class Users {
 
-    private String email;
-    private LocalDate loginTime;
-    private String team;
+    private final String email;
+    private final LocalDate loginTime;
+    private final String team;
 
     public Users(String email, LocalDate loginTime, String team) {
         this.email = email;

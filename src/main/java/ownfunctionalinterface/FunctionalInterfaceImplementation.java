@@ -5,7 +5,7 @@ import java.util.List;
 
 public class FunctionalInterfaceImplementation {
 
-    static void modifyString(List<String> lines) {
+    private static void modifyString(List<String> lines) {
         OwnFunctionalInterface ownFunctionalInterface = (list) -> list.stream().map((str) -> (str.replace("$", "s")))
                 .forEach(System.out::println);
 
