@@ -1,4 +1,4 @@
-package main.java;
+package main.java.ownfunctionalinterface;
 
 import java.util.List;
 
@@ -6,6 +6,8 @@ import java.util.List;
 interface OwnFunctionalInterface {
 
     void modifyString(List<String> lines);
-
-
 }
+
+
+
+
